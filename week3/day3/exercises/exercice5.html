@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <div id="container">Users:</div>
+
+  <ul class="list">
+    <li>John</li>
+    <li>Pete</li>
+  </ul>
+
+  <ul class="list">
+    <li>David</li>
+    <li>Sarah</li>
+    <li>Dan</li>
+  </ul>
+  <script>
+    const container = document.getElementById("container");
+    console.log(container);
+
+    const ulLists = document.querySelectorAll(".list");
+    ulLists[0].children[1].textContent = "Richard";
+
+    ulLists[1].children[1].remove(); 
+
+    ulLists.forEach(ul => {
+    ul.children[0].textContent = "Yasser"; 
+    });
+
+    ulLists.forEach(ul => {
+    ul.classList.add("student_list");
+    });
+
+    ulLists[0].classList.add("university", "attendance");
+
+    container.style.backgroundColor = "lightblue";
+    container.style.padding = "10px";
+
+    const lis = document.querySelectorAll("li");
+    lis.forEach(li => {
+    if (li.textContent === "Dan") {
+        li.style.display = "none";
+    }
+    });
+
+    lis.forEach(li => {
+    if (li.textContent === "Richard") {
+        li.style.border = "2px solid black";
+    }
+    });
+
+    document.body.style.fontSize = "18px";
+
+    if (container.style.backgroundColor === "lightblue") {
+    const names = ulLists[0].querySelectorAll("li");
+    alert(`Hello ${names[0].textContent} and ${names[1].textContent}`);
+    }
+
+  </script>
+</body>
+</html>

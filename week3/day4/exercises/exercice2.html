@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="firstname"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lastname"><br><br>
+        <input type="submit" value="Submit" id="submit">
+    </form> 
+    <ul class="usersAnswer"></ul>
+
+    <script>
+        let form=document.querySelector('form')
+        console.log(form)
+        let inp1=document.getElementById('fname')
+        let inp2=document.getElementById('lname')
+        console.log(inp1)
+        console.log(inp2)
+        let fname=document.getElementsByName('firstname')[0]
+        let lname=document.getElementsByName('lastname')[0]
+        console.log(fname)
+        console.log(lname)
+        let submit=document.querySelector("form")
+        submit.addEventListener("submit",function(event){
+            event.preventDefault()
+            let firstname=fname.value.trim()
+            let lastname=lname.value.trim()
+            let ul=document.querySelector('ul')
+            let liname=document.createElement('li')
+            liname.textContent=`${firstname} of the user`
+            let lilast=document.createElement('li')
+            lilast.textContent=`${firstname} of the user`
+
+            ul.appendChild(liname)
+            ul.appendChild(lilast)
+        })
+    </script>
+</body>
+</html>

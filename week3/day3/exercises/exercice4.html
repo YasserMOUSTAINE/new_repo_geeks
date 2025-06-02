@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        const hotelCost = () => {
+    let input;
+    while (true) {
+        input = prompt("Number of nights: ");
+        
+        if (input !== null && input.trim() !== "" && !isNaN(input) && Number(input) > 0) {
+            break;
+        }
+
+        alert("Please enter a valid number of nights.");
+    }
+
+    const night = Number(input); 
+    const total = night * 140;
+    return total;
+};
+
+function planeRideCost(destination) {
+    if (destination.toLowerCase() === "london") {
+        return 183;
+    } else if (destination.toLowerCase() === "paris") {
+        return 220;
+    } else {
+        return 300;
+    }
+    }
+
+    function rentalCarCost(days) {
+        let total = days * 40;
+        if (days > 10) {
+            total = total * 0.95;
+        }
+        return total;
+    }
+
+    let hotel = hotelCost();
+    let car = rentalCarCost(5);
+    let plane = planeRideCost("london");
+
+    console.log(`The car cost: $${car}, the hotel cost: $${hotel}, the plane tickets cost: $${plane}.`);
+    console.log(`Total cost of your vacation is: $${car + hotel + plane}`);
+
+    </script>
+</body>
+</html>

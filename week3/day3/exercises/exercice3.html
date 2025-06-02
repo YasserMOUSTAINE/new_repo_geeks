@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var res
+        const changeEnough=(itemPrice,amountOfChange)=>{
+            let sum=0
+            for(i in amountOfChange){
+                switch(Number(i)){
+                    case 0:
+                        sum+=amountOfChange[i]*0.25
+                        break;
+
+                    case 1:
+                        sum+=amountOfChange[i]*0.10
+                        break;
+
+                    case 2:
+                        sum+=amountOfChange[i]*0.05
+                        break;
+                    
+                    case 3:
+                        sum+=amountOfChange[i]*0.01
+                        break;
+                }
+            }
+            if (sum>itemPrice){
+                res=true
+            }
+            else{
+                res=false
+            }
+
+            console.log(res)
+            console.log(sum)
+        }
+        changeEnough(4.25, [25, 20, 5, 0])
+        changeEnough(0.75, [0,0,20,5])
+        changeEnough(14.11, [2,100,0,0])
+    </script>
+</body>
+</html>

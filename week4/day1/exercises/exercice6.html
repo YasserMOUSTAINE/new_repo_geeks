@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="para">
+        
+    </div>
+    <script>
+        var div=document.querySelector('div')
+        function selfInvoke(child,partner,geo,job){
+            let para=document.createElement('p')
+            para.textContent=`You will be a ${job} in ${geo}, and married to ${partner} with ${child} kids.`
+            div.appendChild(para)
+        }
+        selfInvoke(5,'test1','maroc', 'dev')
+        selfInvoke(5,'test1','maroc', 'dev')
+    </script>
+</body>
+</html>

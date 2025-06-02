@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         .fade-out {
+      animation: fade 2s forwards;
+    }
+        @keyframes fade {
+      from {
+        opacity: 1;
+      }
+      to {
+        opacity: 0;
+      }
+    }
+    </style>
+</head>
+<body>
+    <article>
+        <h1> Some Facts </h1>
+        <h2> The Chocolate </h2>
+        <h3> History of the chocolate </h3>
+        <p> Chocolate is made from tropical Theobroma cacao tree seeds. 
+        Its earliest use dates back to the Olmec civilization in Mesoamerica.</p>
+        <p> After the European discovery of the Americas, chocolate became 
+        very popular in the wider world, and its demand exploded. </p>
+        <p> Chocolate has since become a popular food product that millions enjoy every day, 
+        thanks to its unique, rich, and sweet taste.</p> 
+        <p> But what effect does eating chocolate have on our health?</p> 
+        
+    </article>
+    <button> click me</button>
+    <script>
+        //1
+        let h1=document.querySelector('h1')
+        console.log(h1)
+
+        //2
+
+        let article=document.querySelector('article')
+        let last=article.lastElementChild;
+        article.removeChild(last)
+
+        //3
+        let h2=document.querySelector('h2')
+        h2.addEventListener('click',function(event){
+            h2.style.backgroundColor="red"
+        })
+
+        //4
+        let h3=document.querySelector('h3')
+        h3.addEventListener("click",function(event){
+            h3.style.display='none'
+        })
+
+        //5
+        let btn=document.querySelector('button')
+        btn.addEventListener("click",function(event){
+            let para= document.querySelectorAll('p')
+            para.forEach(p=>{
+                p.style.fontWeight="bold"
+            })
+        })
+
+        //6
+        h1.addEventListener('mouseover',function(){
+            const rand=Math.floor(Math.random()*101);
+            h1.style.fontSize=`${rand}px`
+        })
+
+        //7
+        let sec=document.querySelectorAll('p')[1]
+        sec.addEventListener("mouseover",function(){
+            sec.classList.add("fade-out")
+        })
+    </script>
+</body>
+</html>

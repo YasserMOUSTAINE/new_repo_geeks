@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const colors = ["Blue", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow"];
+        const ordinal = ["th","st","nd","rd"];
+
+        colors.map((val,i)=>{
+            let nd;
+            
+                switch(i+1){
+                    case 1:
+                         nd=ordinal[1]
+                        break;
+                    case 2:
+                         nd=ordinal[2]
+                        break;
+                        
+                    case 3:
+                         nd=ordinal[3]
+                        break;
+                        
+                    default:
+                         nd=ordinal[0]
+                        
+                }
+            
+            console.log(`${i+1}${nd} choice is ${val}`)
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Challenge: Create a solar system</title>
+  <style>
+    body {
+      background-color: black;
+      padding: 10px;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+    .planet {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      text-align: center;
+      position: relative;
+      border: 2px solid white;
+      margin: 20px;
+      display: inline-block;
+      vertical-align: top;
+      line-height: 100px;
+      font-weight: bold;
+      color: white;
+      user-select: none;
+    }
+    .moon {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: rgb(237, 237, 237);
+      border: 2px solid red;
+      top: 40px; /* Position temporaire, sera ajustée par JS */
+      left: 40px;
+    }
+  </style>
+</head>
+<body>
+
+<section class="listPlanets"></section>
+
+<script>
+  const planets = [
+    { name: "Mercury", color: "gray", moons: 0 },
+    { name: "Venus", color: "yellow", moons: 0 },
+    { name: "Earth", color: "blue", moons: 1 },
+    { name: "Mars", color: "red", moons: 2 },
+    { name: "Jupiter", color: "orange", moons: 4 },  
+    { name: "Saturn", color: "khaki", moons: 3 },
+    { name: "Uranus", color: "lightblue", moons: 2 },
+    { name: "Neptune", color: "darkblue", moons: 1 }
+  ];
+
+  const section = document.querySelector(".listPlanets");
+
+  planets.forEach(planet => {
+    const planetDiv = document.createElement("div");
+    planetDiv.classList.add("planet");
+    planetDiv.style.backgroundColor = planet.color;
+    planetDiv.textContent = planet.name;
+
+    const center = 50; 
+    const radius = 60; 
+    for (let i = 0; i < planet.moons; i++) {
+      const moonDiv = document.createElement("div");
+      moonDiv.classList.add("moon");
+
+      
+      const angle = (2 * Math.PI / planet.moons) * i;
+      const x = center + radius * Math.cos(angle) - 10; 
+      const y = center + radius * Math.sin(angle) - 10;
+
+      moonDiv.style.left = x + "px";
+      moonDiv.style.top = y + "px";
+
+      planetDiv.appendChild(moonDiv);
+    }
+
+    section.appendChild(planetDiv);
+  });
+</script>
+
+</body>
+</html>

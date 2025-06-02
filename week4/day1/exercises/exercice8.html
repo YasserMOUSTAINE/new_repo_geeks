@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="ing"></div>
+    <script>
+        function makeJuice(size){
+            let ingredients=[]
+            function addIngredient(v1,v2,v3){
+                ingredients.push(v1,v2,v3)
+                
+                console.log(ingredients)
+                
+            }
+            
+            function displayIngredient(){
+                let div =document.getElementById('ing')
+                let para=document.createElement('p')
+                para.textContent=`The client wants a ${size} juice, containing ${ingredients.join(', ')}.`
+                div.appendChild(para)
+            }
+            addIngredient("apple","banana","orange")
+            addIngredient("mango", "pineapple", "grape");
+            displayIngredient()
+
+        }
+        makeJuice('small')
+
+    </script>
+</body>
+</html>
