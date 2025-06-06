@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.cdnfonts.com/css/sega-logo-font" rel="stylesheet">
+    <style>
+        .navbar{
+            display: flex;
+            align-items: center;
+            padding-left: 10%;
+            background-color: rgb(31, 194, 31);
+            background-image: url("circuit-pattern.png");
+            background-repeat: no-repeat;
+            background-blend-mode:overlay ;
+            background-size: cover;
+        }
+        .headnav{
+            font-family: 'SEGA LOGO FONT', sans-serif;
+            font-weight: 300;
+        }
+        .inpNav{
+            margin-left: 10%;
+            width: 40%;
+            height: 20px;
+
+        }
+        .articleBody{
+            background-color: #6556cd;
+            height: 100%;
+        }
+        .robot-grid{
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+            gap: 1rem;
+            padding: 1rem;
+            
+        }
+        .div-img{
+            background-color:#303952 ;
+            border-radius: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 300px;
+            height: 300px;
+            
+        }
+        .img-div{
+            width: 250px;
+            height: 250px;
+        }
+        .robot-grid #test1{
+            background-color: #4fc1c5;
+            display: flex;
+            justify-content: center;
+            padding-top: 30px;
+        }
+        
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <h1 class="headnav">ROBOFRIENDS</h1>
+        <input class="inpNav" oninput="handleChange(event)" type="text" value="" name="search" id="search" placeholder="search">
+
+    </nav>
+    <article class="articleBody">
+        <div id="robotGrid" class="robot-grid">
+
+        </div>
+    </article>
+    <script src="roboFrind.js"></script>
+</body>
+</html>
