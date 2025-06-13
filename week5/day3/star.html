@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Star Wars Characters</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                    url('starwars.webp') no-repeat center center fixed;
+        background-size: cover;
+        color: #ffe81f;
+        text-align: center;
+        padding: 20px;
+        min-height: 100vh;
+        }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    img{
+        width: 190px;
+    }
+    #loading {
+      display: none;
+      margin: 20px;
+    }
+
+    #error {
+        color: #ffe81f;
+        font-size: 18px;
+        margin-top: 10px;
+        font-weight: bold;
+        }
+
+    .spinn-w{
+        font-size: 60px;
+    }
+    #character {
+      margin-top: 20px;
+      font-size: 18px;
+      height: 500px;
+      border: 3px solid #ffe81f;
+      padding: 20px;
+      border-radius: 25px;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center ;
+    }
+  </style>
+</head>
+<body>
+
+    <img src="Star.png" alt="star" >
+  <div id="character">
+    <div id="loading">
+        <i class="fa-solid fa-spinner fa-spin-pulse spinn-w"></i>
+    </div>
+    <div id="error"></div>
+  </div>
+  <button id="get-character">Find someone</button>
+
+  <script src="star.js"></script>
+</body>
+</html>

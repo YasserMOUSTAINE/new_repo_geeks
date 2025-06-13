@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Currency Converter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+      background: #f4f4f4;
+    }
+    select, input, button {
+      margin: 10px;
+      padding: 10px;
+      font-size: 16px;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>💱 Currency Converter</h1>
+
+  <div>
+    <select id="from-currency"></select>
+    <button id="switch">↔️</button>
+    <select id="to-currency"></select>
+  </div>
+
+  <div>
+    <input type="number" id="amount" placeholder="Amount" />
+    <button id="convert">Convert</button>
+  </div>
+
+  <div id="result"></div>
+
+  <script src="currency.js"></script>
+</body>
+</html>
